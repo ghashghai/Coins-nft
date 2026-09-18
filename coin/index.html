@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات اثر باستانی - NFT</title>
+    <style>
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .coin-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        h1 {
+            font-size: 22px;
+            color: #d4af37;
+            margin-top: 15px;
+        }
+        .badge {
+            display: inline-block;
+            background: #333;
+            color: #d4af37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+        }
+        .section h3 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #b0b0b0;
+        }
+        .puzzle-box {
+            background: #2a251a;
+            border: 1px dashed #d4af37;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .btn-opensea {
+            display: block;
+            text-align: center;
+            background: #2081e2;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn-share {
+            display: block;
+            text-align: center;
+            background: #333;
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content-box">
+        <div id="loading" style="text-align: center; padding: 40px;">در حال بارگذاری اطلاعات اثر...</div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const coinId = urlParams.get('id');
+
+        async function loadCoinData() {
+            const container = document.getElementById('content-box');
+            
+            if (!coinId) {
+                container.innerHTML = '<div class="error">شناسه‌ای برای سکه یافت نشد!</div>';
+                return;
+            }
+
+            try {
+                const response = await fetch('../data/coins.json');
+                const coinsData = await response.json();
+                
+                const coin = coinsData[coinId];
+
+                if (!coin) {
+                    container.innerHTML = '<div class="error">سکه‌ای با این مشخصات در سیستم ثبت نشده است.</div>';
+                    return;
+                }
+
+                container.innerHTML = `
+                    <span class="badge">${coin.dynasty} - شناسه: ${coin.id}</span>
+                    <h1>${coin.title}</h1>
+                    <img src="${coin.image_url}" alt="${coin.title}" class="coin-img">
+                    
+                    <div class="section">
+                        <h3>مشخصات فنی و تاریخی</h3>
+                        <p><strong>فرمانروا:</strong> ${coin.ruler}</p>
+                        <p><strong>تاریخ تقریبی:</strong> ${coin.date}</p>
+                        <p><strong>ویژگی‌ها:</strong> ${coin.specifications}</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>توضیحات تاریخی</h3>
+                        <p>${coin.historical_description}</p>
+                    </div>
+
+                    <div class="section">
+                        <h3>روایت و داستان اثر</h3>
+                        <p>${coin.story}</p>
+                    </div>
+
+                    <div class="puzzle-box">
+                        <h3>🧩 بخش پازل کلکسیونی</h3>
+                        <p><strong>گروه پازل:</strong> ${coin.puzzle_group}</p>
+                        <p><strong>وضعیت:</strong> ${coin.puzzle_part}</p>
+                        <p><strong>تکه رمز اختصاصی این سکه:</strong> <span style="color: #d4af37; font-weight: bold; font-size: 16px;">${coin.puzzle_text}</span></p>
+                        <p style="font-size: 12px; color: #888; margin-top: 5px;">برای کامل کردن کلمه راز، قطعات دیگر این مجموعه را پیدا کنید.</p>
+                    </div>
+
+                    <a href="${coin.nft_url}" target="_blank" class="btn-opensea">مشاهده و خرید در OpenSea</a>
+                    <a href="#" onclick="sharePage()" class="btn-share">اشتراک‌گذاری این اثر 🔗</a>
+                `;
+
+            } catch (error) {
+                console.error("خطا در خواندن داده‌ها:", error);
+                container.innerHTML = '<div class="error">خطایی در بارگذاری اطلاعات رخ داد. لطفاً بعداً تلاش کنید.</div>';
+            }
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('لینک صفحه در حافظه موقت کپی شد!');
+            }
+        }
+
+        loadCoinData();
+    </script>
+
+</body>
+</html>
