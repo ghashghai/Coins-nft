@@ -1,0 +1,47 @@
+{
+  "AH-001": {
+    "id": "AH-001",
+    "dynasty": "Achaemenid",
+    "title": "The Kneeling Archer King",
+    "image_url": "images/ah-001.png",
+    "ruler": "Achaemenid King (symbolic)",
+    "date": "Digital recreation, 2026",
+    "specifications": "Gold, hand-struck, cuneiform script border",
+    "historical_description": "This coin is a symbolic recreation of one of the most iconic motifs found on ancient Achaemenid coinage: a king captured kneeling mid-stride, bow drawn. The image symbolized the eternal readiness, power, and majesty of the Persian empire.",
+    "story": "Frozen in gold is a moment from Iran's endless epic: a king neither standing still nor at war, but forever poised at the threshold of both. A movement locked in metal, a reminder that in ancient Persia, power lived in the silence of a drawn bow.",
+    "puzzle_group": "achaemenid-trio-1",
+    "puzzle_part": "1 of 3",
+    "puzzle_text": "CY",
+    "nft_url": "https://opensea.io/assets/[contract-address]/[token-id]"
+  },
+  "AH-002": {
+    "id": "AH-002",
+    "dynasty": "Achaemenid",
+    "title": "The Lion and the Bull",
+    "image_url": "images/ah-002.png",
+    "ruler": "Achaemenid King (symbolic)",
+    "date": "Digital recreation, 2026",
+    "specifications": "Gold, hand-struck, cuneiform script border",
+    "historical_description": "Faithfully inspired by the famous Persepolis relief, this coin depicts the lion locked in combat with the bull — one of the most enduring images of ancient Persian art, long interpreted as a symbol of the New Year (Nowruz) and the renewal of life and power.",
+    "story": "Two forces of nature, forever bound in struggle: the lion's fury against the bull's raw strength. Carved in gold, this eternal contest speaks of the cycles that ancient Persia believed governed the world — destruction giving way, always, to renewal.",
+    "puzzle_group": "achaemenid-trio-1",
+    "puzzle_part": "2 of 3",
+    "puzzle_text": "RU",
+    "nft_url": "https://opensea.io/assets/[contract-address]/[token-id]"
+  },
+  "AH-003": {
+    "id": "AH-003",
+    "dynasty": "Achaemenid",
+    "title": "The Winged Bull",
+    "image_url": "images/ah-003.jpg",
+    "ruler": "Achaemenid King (symbolic)",
+    "date": "Digital recreation, 2026",
+    "specifications": "Gold, hand-struck, cuneiform script border",
+    "historical_description": "The winged bull was a guardian figure found across ancient Near Eastern civilizations, from Assyria to Persia — a hybrid being believed to stand watch over gates, palaces, and thresholds between the mortal and divine worlds.",
+    "story": "Half earth, half sky — the winged bull walks the line between worlds. A silent sentinel cast in gold, watching over what came before and what is yet to come.",
+    "puzzle_group": "achaemenid-trio-1",
+    "puzzle_part": "3 of 3",
+    "puzzle_text": "S",
+    "nft_url": "https://opensea.io/assets/[contract-address]/[token-id]"
+  }
+}
