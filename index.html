@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری سکه‌های باستانی ایران - NFT Collection</title>
+    <style>
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .header p {
+            color: #999;
+            font-size: 14px;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .filter-btn {
+            background: #222;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #d4af37;
+            color: #121212;
+            border-color: #d4af37;
+            font-weight: bold;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #000;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-badge {
+            font-size: 11px;
+            color: #d4af37;
+            background: #2a251a;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .loading {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>گالری سکه‌های باستانی ایران</h1>
+        <p>بازآفرینی دیجیتال میراث کهن در بستر بلاک‌چین</p>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterCoins('all', this)">همه آثار</button>
+        <button class="filter-btn" onclick="filterCoins('هخامنشی', this)">هخامنشی</button>
+        <button class="filter-btn" onclick="filterCoins('ساسانی', this)">ساسانی</button>
+    </div>
+
+    <div class="grid" id="coins-grid">
+        <div class="loading">در حال بارگذاری کلکسیون...</div>
+    </div>
+
+    <script>
+        let allCoinsData = {};
+
+        async function loadGallery() {
+            const gridContainer = document.getElementById('coins-grid');
+
+            try {
+                const response = await fetch('data/coins.json');
+                allCoinsData = await response.json();
+                
+                renderCoins(allCoinsData);
+
+            } catch (error) {
+                console.error("خطا در بارگذاری داده‌ها:", error);
+                gridContainer.innerHTML = '<div class="loading" style="color: #ff6b6b;">خطا در برقراری ارتباط با اطلاعات کلکسیون.</div>';
+            }
+        }
+
+        function renderCoins(coins) {
+            const gridContainer = document.getElementById('coins-grid');
+            gridContainer.innerHTML = '';
+
+            const coinKeys = Object.keys(coins);
+
+            if (coinKeys.length === 0) {
+                gridContainer.innerHTML = '<div class="loading">سکه‌ای یافت نشد.</div>';
+                return;
+            }
+
+            coinKeys.forEach(key => {
+                const coin = coins[key];
+                
+                const card = document.createElement('a');
+                card.href = `coin/?id=${coin.id}`;
+                card.className = `card coin-item`;
+                card.setAttribute('data-dynasty', coin.dynasty);
+
+                card.innerHTML = `
+                    <img src="${coin.image_url}" alt="${coin.title}">
+                    <div class="card-body">
+                        <span class="card-badge">${coin.dynasty} | ${coin.id}</span>
+                        <div class="card-title">${coin.title}</div>
+                        <div class="card-desc">${coin.historical_description}</div>
+                    </div>
+                `;
+
+                gridContainer.appendChild(card);
+            });
+        }
+
+        function filterCoins(dynasty, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const cards = document.querySelectorAll('.coin-item');
+
+            cards.forEach(card => {
+                const cardDynasty = card.getAttribute('data-dynasty');
+                if (dynasty === 'all' || cardDynasty === dynasty) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        loadGallery();
+    </script>
+
+</body>
+</html>
