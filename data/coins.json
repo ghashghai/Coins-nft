@@ -90,3 +90,33 @@
     "puzzle_text": "ADAE"
   }
 }
+{
+  "id": "SA-007",
+  "dynasty": "ساسانی",
+  "title": "شاه سواره ساسانی",
+  "image_url": "images/007.jpg",
+  "ruler": "انوشیروان",
+  "puzzle_group": "anushirvan",
+  "puzzle_part": 1,
+  "puzzle_text": "ANU"
+},
+{
+  "id": "SA-008",
+  "dynasty": "ساسانی",
+  "title": "آتشدان و موبدان",
+  "image_url": "images/008.jpg",
+  "ruler": "انوشیروان",
+  "puzzle_group": "anushirvan",
+  "puzzle_part": 2,
+  "puzzle_text": "SHIR"
+},
+{
+  "id": "SA-009",
+  "dynasty": "ساسانی",
+  "title": "شیردال ساسانی",
+  "image_url": "images/009.jpg",
+  "ruler": "انوشیروان",
+  "puzzle_group": "anushirvan",
+  "puzzle_part": 3,
+  "puzzle_text": "VAN"
+}
