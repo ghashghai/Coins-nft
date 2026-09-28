@@ -1,122 +1,92 @@
-{
-  "AH-001": {
+[
+  {
     "id": "AH-001",
-    "dynasty": "Achaemenid",
-    "title": "The Archer King",
+    "dynasty": "هخامنشی",
+    "title": "تیرانداز زانو زده",
     "image_url": "images/ah-001.png",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Gold Daric · 8.4g · 17mm",
-    "historical_description": "This coin depicts the iconic Achaemenid archer king — a motif that defined Persian royal coinage for over two centuries.",
-    "story": "Legend says Cyrus the Great never lost a battle. His arrows, like his will, always found their mark.",
-    "nft_url": "#",
+    "ruler": "داریوش یکم",
     "puzzle_group": "cyrus",
     "puzzle_part": 1,
     "puzzle_text": "CY"
   },
-  "AH-002": {
+  {
     "id": "AH-002",
-    "dynasty": "Achaemenid",
-    "title": "The Lion and the Bull",
+    "dynasty": "هخامنشی",
+    "title": "شیر و گاو",
     "image_url": "images/ah-002.png",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Silver Siglos · 5.5g · 15mm",
-    "historical_description": "The eternal struggle between lion and bull is one of the most powerful symbols in ancient Persian art.",
-    "story": "At Nowruz, the sun rises and the lion conquers the bull — light defeats darkness. This coin captures that eternal moment.",
-    "nft_url": "#",
+    "ruler": "داریوش یکم",
     "puzzle_group": "cyrus",
     "puzzle_part": 2,
     "puzzle_text": "RU"
   },
-  "AH-003": {
+  {
     "id": "AH-003",
-    "dynasty": "Achaemenid",
-    "title": "The Winged Bull",
+    "dynasty": "هخامنشی",
+    "title": "گاو بالدار",
     "image_url": "images/ah-003.jpg",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Bronze · 4.2g · 16mm",
-    "historical_description": "The Lamassu — a celestial guardian with the body of a bull and the wings of an eagle — stood at the gates of Achaemenid palaces.",
-    "story": "They say a guardian spirit never sleeps. The winged bull watched over Persepolis for centuries, long after the empire had turned to dust.",
-    "nft_url": "#",
+    "ruler": "داریوش یکم",
     "puzzle_group": "cyrus",
     "puzzle_part": 3,
     "puzzle_text": "S"
   },
-  "AH-004": {
+  {
     "id": "AH-004",
-    "dynasty": "Achaemenid",
-    "title": "The Faravahar of Pasargadae",
-    "image_url": "images/1789934521449.png",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Bronze · 8.1g · 20mm",
-    "historical_description": "The four-winged Faravahar carved at Pasargadae is the oldest known representation of this sacred symbol.",
-    "story": "In Zoroastrian belief, the Faravahar is the eternal guardian spirit — present before birth, watchful during life, and enduring beyond death.",
-    "nft_url": "#",
+    "dynasty": "هخامنشی",
+    "title": "فروهر پاسارگاد",
+    "image_url": "images/ah-004.png",
+    "ruler": "کوروش بزرگ",
     "puzzle_group": "pasargadae",
     "puzzle_part": 1,
     "puzzle_text": "PAS"
   },
-  "AH-005": {
+  {
     "id": "AH-005",
-    "dynasty": "Achaemenid",
-    "title": "Portrait of the King",
-    "image_url": "images/IMG-20260920-WA0001.jpg",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Gold · 8.4g · 18mm",
-    "historical_description": "The profile portrait of the bearded Persian king became the definitive image of Achaemenid power.",
-    "story": "Cyrus was called Father by his people — not a conqueror, but a liberator. His face on a coin was a promise: of justice, of peace, of civilization.",
-    "nft_url": "#",
+    "dynasty": "هخامنشی",
+    "title": "پرتره شاه هخامنشی",
+    "image_url": "images/ah-005.png",
+    "ruler": "کوروش بزرگ",
     "puzzle_group": "pasargadae",
     "puzzle_part": 2,
     "puzzle_text": "ARG"
   },
-  "AH-006": {
+  {
     "id": "AH-006",
-    "dynasty": "Achaemenid",
-    "title": "Tomb of Cyrus Under the Stars",
-    "image_url": "images/1789935306923.png",
-    "ruler": "Cyrus the Great",
-    "date": "Digital recreation, 2026",
-    "specifications": "Achaemenid Empire · Dark Bronze · 7.8g · 20mm",
-    "historical_description": "The tomb of Cyrus the Great at Pasargadae has stood for 2,500 years — a monument to the man who authored the world's first human rights charter.",
-    "story": "When Alexander the Great visited the tomb, he found the inscription: O man, whoever you are — I am Cyrus, who gave the Persians their empire. Do not begrudge me this little earth that covers my body.",
-    "nft_url": "#",
+    "dynasty": "هخامنشی",
+    "title": "آرامگاه کوروش",
+    "image_url": "images/ah-003.jpg",
+    "ruler": "کوروش بزرگ",
     "puzzle_group": "pasargadae",
     "puzzle_part": 3,
     "puzzle_text": "ADAE"
+  },
+  {
+    "id": "SA-007",
+    "dynasty": "ساسانی",
+    "title": "شاه سواره ساسانی",
+    "image_url": "images/007.jpg",
+    "ruler": "انوشیروان",
+    "puzzle_group": "anushirvan",
+    "puzzle_part": 1,
+    "puzzle_text": "ANU"
+  },
+  {
+    "id": "SA-008",
+    "dynasty": "ساسانی",
+    "title": "آتشدان و موبدان",
+    "image_url": "images/008.jpg",
+    "ruler": "انوشیروان",
+    "puzzle_group": "anushirvan",
+    "puzzle_part": 2,
+    "puzzle_text": "SHIR"
+  },
+  {
+    "id": "SA-009",
+    "dynasty": "ساسانی",
+    "title": "شیردال ساسانی",
+    "image_url": "images/009.jpg",
+    "ruler": "انوشیروان",
+    "puzzle_group": "anushirvan",
+    "puzzle_part": 3,
+    "puzzle_text": "VAN"
   }
-}
-{
-  "id": "SA-007",
-  "dynasty": "ساسانی",
-  "title": "شاه سواره ساسانی",
-  "image_url": "images/007.jpg",
-  "ruler": "انوشیروان",
-  "puzzle_group": "anushirvan",
-  "puzzle_part": 1,
-  "puzzle_text": "ANU"
-},
-{
-  "id": "SA-008",
-  "dynasty": "ساسانی",
-  "title": "آتشدان و موبدان",
-  "image_url": "images/008.jpg",
-  "ruler": "انوشیروان",
-  "puzzle_group": "anushirvan",
-  "puzzle_part": 2,
-  "puzzle_text": "SHIR"
-},
-{
-  "id": "SA-009",
-  "dynasty": "ساسانی",
-  "title": "شیردال ساسانی",
-  "image_url": "images/009.jpg",
-  "ruler": "انوشیروان",
-  "puzzle_group": "anushirvan",
-  "puzzle_part": 3,
-  "puzzle_text": "VAN"
-}
+]
