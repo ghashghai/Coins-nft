@@ -1,101 +1,122 @@
-{
-  "AH-001": {
-    "id": "AH-001",
-    "dynasty": "هخامنشی",
-    "title": "تیرانداز زانو زده",
-    "image_url": "images/ah-001.png",
-    "ruler": "داریوش یکم",
-    "historical_description": "سکه طلای هخامنشی",
-    "puzzle_group": "cyrus",
-    "puzzle_part": 1,
-    "puzzle_text": "CY"
-  },
-  "AH-002": {
-    "id": "AH-002",
-    "dynasty": "هخامنشی",
-    "title": "شیر و گاو",
-    "image_url": "images/ah-002.png",
-    "ruler": "داریوش یکم",
-    "historical_description": "سکه طلای هخامنشی",
-    "puzzle_group": "cyrus",
-    "puzzle_part": 2,
-    "puzzle_text": "RU"
-  },
-  "AH-003": {
-    "id": "AH-003",
-    "dynasty": "هخامنشی",
-    "title": "گاو بالدار",
-    "image_url": "images/ah-003.jpg",
-    "ruler": "داریوش یکم",
-    "historical_description": "سکه طلای هخامنشی",
-    "puzzle_group": "cyrus",
-    "puzzle_part": 3,
-    "puzzle_text": "S"
-  },
-  "AH-004": {
-    "id": "AH-004",
-    "dynasty": "هخامنشی",
-    "title": "فروهر پاسارگاد",
-    "image_url": "images/ah-004.png",
-    "ruler": "کوروش بزرگ",
-    "historical_description": "سکه طلای هخامنشی",
-    "puzzle_group": "pasargadae",
-    "puzzle_part": 1,
-    "puzzle_text": "PAS"
-  },
-  "AH-005": {
-    "id": "AH-005",
-    "dynasty": "هخامنشی",
-    "title": "پرتره شاه هخامنشی",
-    "image_url": "images/ah-005.png",
-    "ruler": "کوروش بزرگ",
-    "historical_description": "سکه طلای هخامنشی",
-    "puzzle_group": "pasargadae",
-    "puzzle_part": 2,
-    "puzzle_text": "ARG"
-  },
-  "AH-006": {
-    "id": "AH-006",
-    "dynasty": "هخامنشی",
-    "title": "آرامگاه کوروش",
-    "image_url": "images/ah-003.jpg",
-    "ruler": "کوروش بزرگ",
-    "historical_description": "آرامگاه کوروش بزرگ در پاسارگاد",
-    "puzzle_group": "pasargadae",
-    "puzzle_part": 3,
-    "puzzle_text": "ADAE"
-  },
-  "SA-007": {
-    "id": "SA-007",
-    "dynasty": "ساسانی",
-    "title": "شاه سواره ساسانی",
-    "image_url": "images/007.jpg",
-    "ruler": "انوشیروان",
-    "historical_description": "سکه نقره ساسانی",
-    "puzzle_group": "anushirvan",
-    "puzzle_part": 1,
-    "puzzle_text": "ANU"
-  },
-  "SA-008": {
-    "id": "SA-008",
-    "dynasty": "ساسانی",
-    "title": "آتشدان و موبدان",
-    "image_url": "images/008.jpg",
-    "ruler": "انوشیروان",
-    "historical_description": "سکه نقره ساسانی",
-    "puzzle_group": "anushirvan",
-    "puzzle_part": 2,
-    "puzzle_text": "SHIR"
-  },
-  "SA-009": {
-    "id": "SA-009",
-    "dynasty": "ساسانی",
-    "title": "شیردال ساسانی",
-    "image_url": "images/009.jpg",
-    "ruler": "انوشیروان",
-    "historical_description": "سکه نقره ساسانی",
-    "puzzle_group": "anushirvan",
-    "puzzle_part": 3,
-    "puzzle_text": "VAN"
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گالری سکه‌های باستانی ایران</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #14110d;
+    color: #f1e6cf;
   }
-}
+  header { text-align: center; padding: 28px 16px 12px; }
+  h1 { margin: 0; font-size: 1.5rem; color: #d9b45a; }
+  .filters {
+    display: flex; gap: 8px; justify-content: center;
+    padding: 12px; flex-wrap: wrap;
+  }
+  .filters button {
+    background: #2a2419; color: #f1e6cf;
+    border: 1px solid #5b4a26; border-radius: 20px;
+    padding: 8px 18px; font-size: 1rem; cursor: pointer;
+  }
+  .filters button.active { background: #d9b45a; color: #14110d; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; padding: 12px; max-width: 900px; margin: 0 auto;
+  }
+  @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    background: #221d14; border: 1px solid #4a3d22;
+    border-radius: 12px; overflow: hidden;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .card img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+    display: block; background: #0d0b08;
+  }
+  .card .info { padding: 10px; }
+  .card .title { font-size: 1rem; color: #d9b45a; margin-bottom: 4px; }
+  .card .meta { font-size: 0.85rem; opacity: 0.85; }
+  .msg { text-align: center; padding: 30px 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>گالری سکه‌های باستانی ایران</h1>
+</header>
+
+<div class="filters">
+  <button class="active" data-f="all">همه</button>
+  <button data-f="هخامنشی">هخامنشی</button>
+  <button data-f="ساسانی">ساسانی</button>
+</div>
+
+<div id="grid" class="grid"></div>
+<div id="msg" class="msg">در حال بارگذاری...</div>
+
+<script>
+  var coins = [];
+  var current = "all";
+
+  function render() {
+    var grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    var list = coins.filter(function (c) {
+      return current === "all" || c.dynasty === current;
+    });
+    list.forEach(function (c) {
+      var a = document.createElement("a");
+      a.className = "card";
+      a.href = "coin/?id=" + encodeURIComponent(c.id);
+
+      var img = document.createElement("img");
+      img.src = c.image_url;
+      img.alt = c.title;
+      img.loading = "lazy";
+      img.onerror = function () { img.style.opacity = "0.25"; };
+
+      var info = document.createElement("div");
+      info.className = "info";
+      info.innerHTML =
+        '<div class="title"></div><div class="meta"></div>';
+      info.querySelector(".title").textContent = c.title;
+      info.querySelector(".meta").textContent =
+        c.dynasty + " · " + c.ruler;
+
+      a.appendChild(img);
+      a.appendChild(info);
+      grid.appendChild(a);
+    });
+    document.getElementById("msg").textContent =
+      list.length ? "" : "سکه‌ای پیدا نشد.";
+  }
+
+  document.querySelectorAll(".filters button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".filters button").forEach(function (x) {
+        x.classList.remove("active");
+      });
+      b.classList.add("active");
+      current = b.getAttribute("data-f");
+      render();
+    });
+  });
+
+  fetch("data/coins.json?v=" + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      coins = Object.keys(data).map(function (k) { return data[k]; });
+      render();
+    })
+    .catch(function () {
+      document.getElementById("msg").textContent =
+        "خطا در خواندن اطلاعات سکه‌ها.";
+    });
+</script>
+</body>
+</html>
